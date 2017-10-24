@@ -1,14 +1,17 @@
 import React,{Component} from "react";
-import { Router, Route, browserHistory  } from 'react-router';
+import { 
+	BrowserRouter as Router,
+	Route
+} from 'react-router-dom';
 
-import App from './App';
+import { App } from './App';
 
 class Routes extends Component {
      render(){
           return(
-               <Router history={browserHistory}>
-                    <Route path="/" component={App} />
-               </Router>
+            <Router>
+		      <Route path="/" component ={App}/>
+		    </Router>
           )
      }
 }

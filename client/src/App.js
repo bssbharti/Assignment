@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './css/App.css';
 // import * as data from './data/data.json';
-
-class App extends Component {
+import { UserForm } from './modules/userForm';
+import { Switch, Route } from 'react-router-dom';
+export class App extends Component {
   render() {
     return (
      <div className="container">
-          Hyy, Your Assignment starts from here.
+     	<Switch>
+          <Route exact path="/" component ={UserForm}/>
+          {/*<Route path="/all" component ={App}/>*/}
+     	</Switch>
      </div>
     );
   }
 }
-
-export default App;

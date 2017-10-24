@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js app.js"
   },
   "dependencies": {
     "async-busboy": "^0.6.1",
     "bcrypt": "^1.0.2",
-    "body-parser": "~1.15.2",
+    "body-parser": "^1.15.2",
     "circle-to-polygon": "^1.0.0",
     "compression": "^1.6.2",
     "cookie-parser": "~1.4.3",
@@ -17,19 +19,24 @@
     "debug": "~2.2.0",
     "email-templates": "^2.6.0",
     "events": "^1.1.1",
-    "express": "~4.14.0",
+    "express": "^4.14.1",
     "express-jwt": "^5.3.0",
     "fcm-node": "^1.2.0",
     "handlebars": "^4.0.10",
     "jade": "~1.11.0",
     "mkdirp": "^0.5.1",
-    "mongoose": "^4.10.7",
+    "moment": "^2.19.1",
+    "mongoose": "^4.12.4",
     "mongoose-unique-validator": "^1.0.5",
-    "morgan": "~1.7.0",
+    "morgan": "^1.7.0",
     "nodemailer": "^4.0.1"
   },
   "devDependencies": {
     "apidoc": "^0.17.6",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.0.2",
     "chai-http": "^3.0.0",
     "eslint": "^3.19.0",
@@ -38,6 +45,6 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "mocha": "^3.4.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.12.1"
   }
 }

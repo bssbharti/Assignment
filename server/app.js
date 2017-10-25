@@ -1,13 +1,11 @@
-import express from 'express';
-import path from 'path';
-import logger from 'morgan';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import compression from 'compression';
-import router from './routers/user';
-
+var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+var cors = require('cors')
+const compression = require('compression');
 global.APP_PATH = path.resolve(__dirname);
 
 var app = express();
@@ -39,7 +37,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
   next();
 });
-app.use('/user', router);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
